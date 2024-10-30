@@ -5,7 +5,7 @@ output:
     theme: cerulean
 ---
 
-# Resume
+# [Resume](./Rita Wang - Resume.pdf)
 
 ![](./Rita Wang - Resume.pdf)
 

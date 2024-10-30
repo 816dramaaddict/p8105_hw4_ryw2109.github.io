@@ -11,4 +11,4 @@ Welcome to my page!
 
 My name is Rita Wang. The purpose of this webpage is to learn more about me~
 
-# [Resume](./Rita Wang - Resume.pdf)
+# [Resume](about.html)
