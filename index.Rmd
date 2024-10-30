@@ -9,6 +9,8 @@ output:
 
 Welcome to my page!
 
-My name is Rita Wang. The purpose of this webpage is to learn more about me~
+My name is Rita Wang. The purpose of this webpage is to learn more about me as well as test my data visualization skills~
 
-# [Resume](about.html)
+### [About Me](about.html)
+
+### [Data Visualization](visualization.html)
