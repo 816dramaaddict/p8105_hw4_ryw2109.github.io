@@ -1,0 +1,21 @@
+---
+title: "about"
+output:
+  html_document:
+    theme: cerulean
+---
+
+# Resume
+
+![](./Rita Wang - Resume.pdf)
+
+## Academic
+
+I am a current second year graduate student at **Columbia University Mailman School of Public Health** in the Department of Epidemiology with a certification in _Applied Biostatistics and Public Health Data Science_.
+
+For undergraduate, I went to SUNY Stony Brook University with a double major in Applied Mathematics and Science, and Quantitative Biology and Informatics.
+
+
+## Work Experience
+
+My most recent work experience is working as a secretary for Cover Bridge Corp. and as a data analyst intern for LA County of Public Health Office of Women’s Health.
