@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "Home Page"
 output:
   html_document:
     theme: cerulean
