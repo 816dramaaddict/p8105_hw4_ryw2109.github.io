@@ -5,7 +5,7 @@ output:
     theme: cerulean
 ---
 
-# Introduction
+## Introduction
 
 Welcome to my page!
 
