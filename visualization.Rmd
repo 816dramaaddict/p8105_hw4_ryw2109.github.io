@@ -17,22 +17,11 @@ The "NYC Restaurant Inspections" data set is used
 
 ```{r default_setting, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
-library(ggthemes)
-library(ggridges)
-library(patchwork)
 
 library(p8105.datasets)
 
 library(flexdashboard)
 library(plotly)
-
-knitr::opts_chunk$set(
-  fig.width = 6,
-  fig.asp = .6,
-  out.width = "90%"
-)
-
-theme_set(theme_bw() + theme(legend.position = "bottom"))
 ```
 
 ```{r importing_and_tidying, echo = FALSE, message = FALSE, warning = FALSE}
@@ -67,7 +56,7 @@ rest_inspec %>%
     x = ~year, y = ~score, type = "scatter", mode = "markers", color = ~boro)
 ```
 
-From this graph, it can be seen that in 2013, there were not as many restaurants that were scored for particular inspections in comparison to the other years.The range of total scores accumulated for inspection for each resturant were relactively similar between 2014 and 2017. Staten Island seem to have a relatively lower score than the other boroughs across all 5 years as well.
+From this graph, it can be seen that in 2013, there were not as many restaurants that were scored for particular inspections in comparison to the other years.The range of total scores accumulated for inspection for each restaurant were relatively similar between 2014 and 2017. Staten Island seem to have a relatively lower score than the other boroughs across all 5 years as well.
 
 ```{r score_critical_flag, echo = FALSE, warning = FALSE}
 rest_inspec %>% 

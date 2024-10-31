@@ -1,13 +1,36 @@
 ---
-title: "Untitled"
+title: "Data Visualization"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
+library(tidyverse)
+
+library(p8105.datasets)
+
 library(flexdashboard)
+library(plotly)
+```
+
+```{r importing_and_tidying, echo = FALSE, message = FALSE, warning = FALSE}
+data("rest_inspec") # importing data
+
+rest_inspec = rest_inspec %>% 
+  drop_na(boro, critical_flag, inspection_date, score) %>% 
+  filter(
+    boro != "Missing", # was originally found to have both NA and "Missing" values
+    score > 0 # was originally found to have negative scores, which does not sound reasonable to have
+  ) %>% 
+  mutate(
+    inspection_date_2 = as.Date(inspection_date),
+    year = year(inspection_date),
+    month = month(inspection_date),
+    day = day(inspection_date)
+  ) %>% 
+  slice_sample(n = 5000)
 ```
 
 Column {data-width=650}
@@ -15,22 +38,33 @@ Column {data-width=650}
 
 ### Chart A
 
-```{r}
-
+```{r score_vs_boro, echo = FALSE, warning = FALSE}
+rest_inspec %>% 
+  plot_ly(
+  x = ~boro, y = ~score, type = "box", mode = "markers", color = ~boro)
 ```
+
+From this graph, we can see that each boroughs. have around the same median score where there are also outliers. Staten Island seems to have a smaller number of outliers and a much shorter range of total score for a particular inspection in comparison with the other boroughs.
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Chart B
 
-```{r}
-
+```{r score_vs_inspection_date, echo = FALSE, warning = FALSE}
+rest_inspec %>% 
+  plot_ly(
+    x = ~year, y = ~score, type = "scatter", mode = "markers", color = ~boro)
 ```
+
+From this graph, it can be seen that in 2013, there were not as many restaurants that were scored for particular inspections in comparison to the other years.The range of total scores accumulated for inspection for each restaurant were relatively similar between 2014 and 2017. Staten Island seem to have a relatively lower score than the other boroughs across all 5 years as well.
 
 ### Chart C
 
-```{r}
-
+```{r score_critical_flag, echo = FALSE, warning = FALSE}
+rest_inspec %>% 
+  plot_ly(
+    x = ~grade, y = ~score, type = "bar", mode = "markers", color = ~boro)
 ```
 
+From the graph, it can be seen that a majority of the restaurants across all 5 boroughs have a A rating on inspection, following B and C ratings. There are several restaurants that have not yet been graded or have pending grades. It can also been seen that Staten Island have relatively fewer restaurants than th other boroughs as well.

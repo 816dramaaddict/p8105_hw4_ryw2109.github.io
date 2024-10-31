@@ -13,4 +13,4 @@ My name is Rita Wang. The purpose of this webpage is to learn more about me as w
 
 ## [About Me](about.html)
 
-## [Data Visualization](visualization.html)
+## [Data Visualization](dashboard.html)
